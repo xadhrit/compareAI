@@ -22,6 +22,8 @@ code {
  * Css BLOCK FOR APP FILE
 */
 
+/* Header */
+
 .App-header {
   display: flex;
   flex: 1;
@@ -40,3 +42,6 @@ code {
   margin-left: 1rem;
  
 }
+
+/* Main Result */
+
