@@ -6,7 +6,7 @@ import { faImage, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 
 // const API_KEY = process.env.GOOGLE_API_KEY 
-const GOOGLE_API_KEY = ''
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 
 interface GenerativePart {
   inlineData: { data: string; mimeType: string };
