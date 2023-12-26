@@ -63,7 +63,7 @@ const App: React.FC = () => {
         const result = await model.generateContent([prompt, ...imageParts]);
         const response = await result.response;
         const text = await response.text();
-        console.log(text)
+        console.log("Result : ",text)
         const values = text
           .split('\n')
           .map(line => line.split('|')
@@ -102,11 +102,11 @@ const App: React.FC = () => {
   }
 
   const updatePrompt = () => {
-    console.log('prompt : ', compareSearch);
+    // console.log('prompt : ', compareSearch);
 
     const prompt = `generate a comparison table of ${compareSearch}.
           Use highly cohrent precise points to compare and make sure you bring up the rare facts as well for every comparison.`;
-    console.log(prompt);
+    // console.log(prompt);
     return prompt
   }
 
