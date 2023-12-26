@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import './index.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import ReactGA from 'react-ga'
 
 import env from "react-dotenv";
+
+// init
+ReactGA.initialize('G-MK5PL0D3Q1');
+
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 // const API_KEY = process.env.GOOGLE_API_KEY 
 const GOOGLE_API_KEY = env.GOOGLE_API_KEY
@@ -14,7 +20,7 @@ interface GenerativePart {
 }
 
 const App: React.FC = () => {
-
+  
   const genai = new GoogleGenerativeAI(GOOGLE_API_KEY ?? '');
   const [compareSearch, setCompareSearch] = useState<string>('');
   const [tableData, setTableData] = useState<string[][]>([]);
@@ -22,6 +28,14 @@ const App: React.FC = () => {
   const [images, setImages] = useState<File[]>([]);
   const [imagePreviews, setImagePreviews] = useState<string[]>([]);
   const [timeTaken, setTimeTaken] = useState<number | null>(null);
+  
+  useEffect(() => {
+    
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    
+    // clean up function
+    return () => {} 
+  },[]);
 
   const fileToGenerativePart = async (file: File): Promise<GenerativePart> => {
     try {
