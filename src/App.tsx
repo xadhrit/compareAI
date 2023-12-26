@@ -95,7 +95,7 @@ const App: React.FC = () => {
       console.error("Error generating comparison : ", error);
     } finally {
       const time2 = performance.now();
-      const taken = time2 - time1;
+      const taken = (time2 - time1) / 1000;
       setTimeTaken(taken);
       setIsLoading(false)
     }
@@ -191,9 +191,9 @@ const App: React.FC = () => {
             {[...Array(5)].map((_, index) => (
               <div
                 key={index}
-                className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}
+                className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
               >
-                <div className="py-2 px-4 mt-4 border loading-row"></div>
+                <div className="py-6 px-4 ml-5 mr-5 mt-4 border loading-row"></div>
 
 
                 {/* Repeat for each column */}
@@ -225,7 +225,7 @@ const App: React.FC = () => {
                 </tbody>
 
               </table>
-              {timeTaken && <p>Table generated in {timeTaken.toFixed(2)} milliseconds</p>}
+              {timeTaken && <p className="timeTaken">Table generated in {timeTaken.toFixed(2)} seconds</p>}
             </div>
           ))}
       </main>

@@ -77,7 +77,8 @@ code {
 }
 
 .imagePreview {
-  width: 50px; /* Adjust the size of the preview images */
+  width: 50px;
+  /* Adjust the size of the preview images */
   height: 50px;
   margin-right: 10px;
   object-fit: cover;
@@ -98,5 +99,12 @@ code {
 }
 
 .footer {
-  font-family:'Abhaya';
+  font-family: 'Abhaya';
+}
+
+.timeTaken {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-left: 2rem;
 }
