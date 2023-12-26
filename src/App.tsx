@@ -114,7 +114,9 @@ const App: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     getTable();
-    setCompareSearch('');
+    setImages([]);
+    setImagePreviews([]);
+    //setCompareSearch('');
   }
 
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
