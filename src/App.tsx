@@ -3,7 +3,9 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import './index.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { config } from "dotenv";
 
+config();
 
 // const API_KEY = process.env.GOOGLE_API_KEY 
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
