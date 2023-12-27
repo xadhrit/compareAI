@@ -154,7 +154,7 @@ const App: React.FC = () => {
       </header>
 
       <main className="App-main">
-        <form className="flex flex-row items-center" style={{ maxWidth: '80%', margin: '0 auto' }} onSubmit={handleSubmit}>
+        <form className="flex flex-wrap items-center" style={{ maxWidth: '80%', margin: '0 auto' }} onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Hydrogen vs. Nitrogen"
@@ -182,13 +182,13 @@ const App: React.FC = () => {
               ))}
             </div>
           )}
-          <label htmlFor="image-upload" className="fileUploadLabel">
+          <label htmlFor="image-upload" className="fileUploadLabel mr-2">
             <FontAwesomeIcon icon={faImage} style={{ cursor: "pointer", marginLeft: "10px", height: "2rem" }}
             />
           </label>
           <input id="image-upload" type="file" accept="image/*" onChange={handleUpload} multiple className="fileUploadInput" />
 
-          <button type="submit" className="flex item-center justify-end bg-black text-white p-2 rounded-md ml-2 w-32" style={{ marginTop: '4vh' }}>
+          <button type="submit" className="flex item-center justify-center bg-black text-white p-2 rounded-md mx-auto w-32" style={{ marginTop: '4vh' }}>
             Generate 🪄
           </button>
         </form>
