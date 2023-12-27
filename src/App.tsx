@@ -106,11 +106,11 @@ const App: React.FC = () => {
   }
 
   const updatePrompt = () => {
-    // console.log('prompt : ', compareSearch);
+    console.log('prompt : ', compareSearch);
 
     const prompt = `generate a comparison table of ${compareSearch}.
           Use highly cohrent precise points to compare and make sure you bring up the rare facts as well for every comparison.`;
-    // console.log(prompt);
+    console.log(prompt);
     return prompt
   }
 
