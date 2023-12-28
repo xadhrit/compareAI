@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import './index.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-
+import ReactGA from 'react-ga';
 
 import env from "react-dotenv";
 
 // init
-
+ReactGA.initialize('G-MK5PL0D3Q1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 // const API_KEY = process.env.GOOGLE_API_KEY 
 const GOOGLE_API_KEY = env.GOOGLE_API_KEY
@@ -26,6 +27,13 @@ const App: React.FC = () => {
   const [images, setImages] = useState<File[]>([]);
   const [imagePreviews, setImagePreviews] = useState<string[]>([]);
   const [timeTaken, setTimeTaken] = useState<number | null>(null);
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+
+    // clean up function
+    return () => {}
+  },[])
 
   const fileToGenerativePart = async (file: File): Promise<GenerativePart> => {
     try {
@@ -53,7 +61,7 @@ const App: React.FC = () => {
     try {
       if (images && images.length >= 2) {
         const model = genai.getGenerativeModel({ model: "gemini-pro-vision" });
-        const prompt = 'Generate a comparison table from content of both images provided. Comparison can include everything about the objects in images for example:characteristics, topic, nature, country etc.'
+        const prompt = 'Generate a comparison table from content of both images provided. Comparison can include everything about the objects in images for example:characteristics, topic, nature, country etc.Use highily coherent precise points to compare and make sure you bring up the rare facts as well for every comparison.'
         const fileInputEl = document.querySelector<HTMLInputElement>("input[type=file]")
         if (!fileInputEl) {
           console.error("file input element not found");
@@ -107,7 +115,7 @@ const App: React.FC = () => {
 
   const updatePrompt = () => {
     const prompt = `generate a comparison table of ${compareSearch}.
-          Use highly coherent precise points to compare and make sure you bring up the rare facts as well for every comparison.`;
+          Use highily coherent precise points to compare and make sure you bring up the rare facts as well for every comparison.`;
     console.log(compareSearch)
     return prompt
   }
