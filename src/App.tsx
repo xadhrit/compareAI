@@ -115,7 +115,7 @@ const App: React.FC = () => {
 
   const updatePrompt = () => {
     const prompt = `generate a comparison table of ${compareSearch}.
-          Use highily coherent precise points to compare and make sure you bring up the rare facts as well for every comparison.`;
+    Give the most precise and data driven comparison. And also try to fetch relevant images from internet`;
     console.log(compareSearch)
     return prompt
   }
