@@ -126,7 +126,6 @@ const App: React.FC = () => {
     getTable();
     setImages([]);
     setImagePreviews([]);
-    //setCompareSearch('');
   }
 
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
