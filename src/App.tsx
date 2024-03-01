@@ -125,7 +125,7 @@ const App: React.FC = () => {
     e.preventDefault();
     getTable();
     setImages([]);
-    setImagePreviews([]);
+    //setImagePreviews([]);
   }
 
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
