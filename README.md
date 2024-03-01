@@ -1,7 +1,7 @@
 # COMPARE AI
 
 <p align='center'>
-<img src='./public/logo.png' height='200px' align-items='center'/>
+<img src='https://i.imgur.com/Kep6ql8.png' height='300px' width='300px' align-items='center'/>
 </p>
 
 >  Can compare pictures and generate a comparison table
